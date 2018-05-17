@@ -7,26 +7,23 @@ const getHour = function(hour) {
         hourResponse.suffix = "AM";
     }
 
-    if (hour < 10) {
-        hourResponse.hour = "0"+ hourResponse.hour;
-    }
-
     return hourResponse;
 };
 
 const formatTime = function(time) {
-    if (time > 10) return time;
+    if (time > 10) return parseInt(time, 10);
 
-    return "0" + time;
+    return "0" + parseInt(time, 10);
 };
 
 export default function(time) {
-    var dateNow = new Date(), hourObj = getHour(dateNow.getHours());
+    const date = new Date(time), hourObj = getHour(date.getHours());
 
     return formatTime(hourObj.hour) +
         ":" +
-        formatTime(dateNow.getMinutes()) +
-        ":" + dateNow.getSeconds() +
+        formatTime(date.getMinutes()) +
+        ":" +
+        formatTime(date.getSeconds()) +
         " " +
         hourObj.suffix;
 };

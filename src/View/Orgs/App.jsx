@@ -1,6 +1,6 @@
 import React , { Component } from "react";
-import Header from 'climatejs/View/Mols/Header';
-import Main from 'climatejs/View/Mols/Main';
+import Header from '../Mols/Header';
+import Main from '../Mols/Main';
 import "./App.css";
 
 class Body extends Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import formatTime from "climatejs/Helpers/formatTime";
+import formatTime from "../../Helpers/formatTime";
 
 const footerStyle = {
     backgroundColor: "#F1F1F1",
@@ -16,4 +16,4 @@ export default function(props) {
           Updated at: {formatTime(props.time)}
       </div>
     );
-}
+};

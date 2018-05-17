@@ -5,21 +5,21 @@ class Temperature extends Component {
         const temperature = this.props.children;
 
         if (temperature <= 5) {
-            return "blue";
+            return "#63A3FF";
         }
 
         if (temperature <= 25) {
-            return "orange";
+            return "#FF9632";
         }
 
-        return "red";
+        return "#ED1946";
     }
 
     render() {
         const style = {color: this.getColor()}, temperature = this.props.children;
 
         return (
-            <span style={style}>{parseInt(temperature, 10)}º</span>
+            <div style={style}>{parseInt(temperature, 10)}º</div>
         );
     }
 }

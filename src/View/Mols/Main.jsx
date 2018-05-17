@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Card from "climatejs/View/Mols/Card";
+import Card from "./Card";
 
 var bodyStyle = {
     backgroundColor: "#F1F1F1",
     height: 700,
     paddingTop: 50, // compensa a barra fixa no topo
     display: "flex",
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
     alignItems: "center"
 };
 

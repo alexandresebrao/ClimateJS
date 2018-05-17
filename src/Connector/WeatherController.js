@@ -1,4 +1,4 @@
-import isCachedTime from "climatejs/Helpers/isCachedTime";
+import isCachedTime from "../Helpers/isCachedTime";
 import OpenWeatherMap from "./OpenWeatherMap";
 
 export default class WeatherController {
