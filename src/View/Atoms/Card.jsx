@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Connector from "../../Connector/OpenWeatherMap";
+import WeatherController from "../../Connector/WeatherController";
 import PropTypes from "prop-types";
 import Temperature from "./Temperature";
 
@@ -7,16 +7,16 @@ class Card extends Component {
     constructor(props) {
         super(props);
         this.state = {loading: true, main: null};
-
+        this.updateData = this.updateData.bind(this);
     }
 
     componentDidMount() {
-        var that = this;
+        new WeatherController(this.props.city, this.updateData);
+    }
 
-        Connector.getInfoFromCity(that.props.city)
-            .then(function(response) {
-                that.setState({main: response.data.main, loading: false});
-            });
+    updateData(value) {
+        console.log(value);
+        this.setState({main: value, loading: false});
     }
 
     render() {
