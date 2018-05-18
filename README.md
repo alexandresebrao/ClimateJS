@@ -1,5 +1,7 @@
 ClimateJS is just a sample app with unit test for JS made with React for a Job Oportunity
 
+[[https://github.com/alexandresebrao/ClimateJS/blob/Example.png|alt=WeatherNow]]
+
 ### Setup
 
 You need to install NodeJS on your computer first
@@ -21,7 +23,7 @@ npm run build
 and a build folder will be avaiable, if you want to serve localy just run after the build command
 
 ```sh
-npm install
+serve -s build
 ```
 
 ### Development Mode
@@ -42,7 +44,7 @@ src/config.js
 
 There will have more info on how to add the city
 
-**Warning**: Adding more city will break UnitTest, you will have to check wich test broke and fix it. More info about testing is below
+**Warning**: Adding more cities will break UnitTest, you will have to fix the test that broke and fix it. More info about testing is below
 
 ### Testing the project
 
