@@ -10,7 +10,7 @@ const headerStyle = {
 };
 
 const imgStyle = {
-    height: "100%"
+    height: "95%" //100% breaks IE
 };
 
 const header = function() {

@@ -4,10 +4,13 @@ import WeatherController from "../../Connector/WeatherController";
 import PropTypes from "prop-types";
 import Temperature from "../Atoms/Temperature";
 import formatCityName from "../../Helpers/formatCityName";
+import Loading from "../Atoms/Loading";
+import "./Card.css";
 
 const wrapperStyle = {
     boxShadow: "0 0 10px rgba(51, 51, 51, 0.1)",
-    width: 300,
+    width: 250,
+    minWidth: 150,
     backgroundColor: "white",
     position: "relative"
 };
@@ -45,15 +48,17 @@ class Card extends Component {
 
     getTemperature() {
         if (this.state.loading) {
-            return "Carregando...";
+            return (<Loading />);
         }
 
         return (<Temperature>{this.state.main.temp}</Temperature>)
     }
 
     render() {
+        const className = this.props.city.replace(",", "");
+
         return (
-            <div style={wrapperStyle}>
+            <div className={className} style={wrapperStyle}>
                 <div style={headerStyle}>{formatCityName(this.props.city)}</div>
                 <hr style={dividerStyle} />
                 <div style={temperatureStyle}>{this.getTemperature()}</div>

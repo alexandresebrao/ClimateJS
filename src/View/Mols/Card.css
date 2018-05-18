@@ -1,0 +1,25 @@
+.Nuukgl {
+    order: 1;
+}
+
+.Urubicibr {
+    order: 2;
+}
+
+.Nairobike {
+    order: 3
+}
+
+@media only screen and (max-width: 800px) {
+    .Nuukgl {
+        order: 2;
+    }
+
+    .Urubicibr {
+        order: 1;
+    }
+
+    .Nairobike {
+        order: 3
+    }
+}
