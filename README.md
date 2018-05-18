@@ -1,17 +1,71 @@
 ClimateJS is just a sample app with unit test for JS made with React for a Job Oportunity
 
+### Setup
+
+You need to install NodeJS on your computer first
+
+than on your console run
+
+```sh
+npm install
+```
+
 ### Building the project
 
-Just run npm install
+For creating a production ready bundle, just run
+
+```sh
+npm run build
+```
+
+and a build folder will be avaiable, if you want to serve localy just run after the build command
+
+```sh
+npm install
+```
+
+### Development Mode
+
+If you want to edit the project and see changes during development, this project has Hot Reload! You just need to run
+
+```sh
+npm start
+```
+
+### Adding more cities to the project
+
+Just edit
+
+```
+src/config.js
+```
+
+There will have more info on how to add the city
+
+**Warning**: Adding more city will break UnitTest, you will have to check wich test broke and fix it. More info about testing is below
 
 ### Testing the project
 
-npm run tests
+To get coverage info and the unit test pipeline you just have to run
 
-Coverage will be avaiable at coverage folder
+```sh
+npm run test
+```
 
-### For release on a Web Server
+It will create a coverage folder with an index.html so you can see the coverage status per file
 
-npm build
+During development you can run
 
-Build will be avaiable at build directory.
+```sh
+npm run test:watch
+```
+
+as you edit any of the project file it will rerun all the tests and check if anything else did break.
+
+### Contact Info
+
+Created by: Alexandre Sebrão
+
+Email: alexandre.sebrao@gmail.com
+
+This software is licenseless, so you can use or modify it the way you want without worrying about it
