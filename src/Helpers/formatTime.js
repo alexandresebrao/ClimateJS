@@ -11,9 +11,10 @@ const getHour = function(hour) {
 };
 
 const formatTime = function(time) {
-    if (time > 10) return parseInt(time, 10);
+    if (time < 10) return "0" + parseInt(time, 10);
 
-    return "0" + parseInt(time, 10);
+    return parseInt(time, 10);
+
 };
 
 export default function(time) {

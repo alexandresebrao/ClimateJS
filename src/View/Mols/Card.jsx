@@ -12,7 +12,8 @@ const wrapperStyle = {
     width: 250,
     minWidth: 150,
     backgroundColor: "white",
-    position: "relative"
+    position: "relative",
+    maxHeight: "100%"
 };
 
 const headerStyle = {
@@ -25,10 +26,11 @@ const headerStyle = {
 };
 
 const temperatureStyle = {
+    display: "flex",
     height: 140,
-    textAlign: "center",
-    fontSize: 72,
-    verticalAlign: "middle"
+    fontSize: 86,
+    justifyContent: "center",
+    alignItems: "center"
 };
 
 const dividerStyle = {
@@ -76,7 +78,9 @@ class Card extends Component {
             <div className={className} style={wrapperStyle}>
                 <div style={headerStyle}>{formatCityName(this.props.city)}</div>
                 <hr style={dividerStyle} />
-                <div style={temperatureStyle}>{this.getTemperature()}</div>
+
+                    <div style={temperatureStyle}>{this.getTemperature()}</div>
+
                 {this.getFooter()}
             </div>
         );

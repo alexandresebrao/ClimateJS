@@ -5,8 +5,6 @@ import Loading from "../Atoms/Loading";
 
 const footerStyle = {
     backgroundColor: "rgba(241,241,241, 0.5)",
-    position: "absolute",
-    bottom: 0,
     width: "100%",
     padding: 8,
     textAlign: "center",
