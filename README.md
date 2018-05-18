@@ -1,6 +1,6 @@
 ClimateJS is just a sample app with unit test for JS made with React for a Job Oportunity
 
-[[https://github.com/alexandresebrao/ClimateJS/blob/Example.png|alt=WeatherNow]]
+[[https://github.com/alexandresebrao/ClimateJS/blob/Example.PNG|alt=WeatherNow]]
 
 ### Setup
 
