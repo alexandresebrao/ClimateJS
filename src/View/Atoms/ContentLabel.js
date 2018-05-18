@@ -19,7 +19,8 @@ const valueStyle = {
 
 const metricStyle = {
     display: "inline-block",
-    fontSize: 13
+    fontSize: 13,
+    lineHeight: 1.2
 };
 
 export default function(props) {

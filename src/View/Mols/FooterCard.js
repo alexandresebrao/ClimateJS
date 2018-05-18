@@ -34,7 +34,7 @@ class FooterCard extends Component {
                     <ContentLabel
                         value={parseInt(this.props.humidity, 10)}
                         metric={"%"}
-                        label={"Humdity"}/>
+                        label={"Humidity"}/>
                     <ContentLabel
                         value={parseInt(this.props.pressure, 10)}
                         metric={"hPa"}
