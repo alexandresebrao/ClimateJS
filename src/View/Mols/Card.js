@@ -34,8 +34,10 @@ const temperatureStyle = {
 };
 
 const dividerStyle = {
-    color: "#EBEBEB",
-    margin:0
+    backgroundColor: "#EBEBEB",
+    margin:0,
+    border: "none",
+    height: 1
 };
 
 class Card extends Component {
@@ -68,7 +70,15 @@ class Card extends Component {
             return (<Loading />)
         }
 
-        return (<FooterCard time={lastUpdated} loading={this.state.loading} />);
+        return (
+            <FooterCard
+                time={lastUpdated}
+                loading={this.state.loading}
+                extra={this.props.extra}
+                pressure={this.state.main.pressure}
+                humidity={this.state.main.humidity}
+            />
+        );
     }
 
     render() {
@@ -78,9 +88,7 @@ class Card extends Component {
             <div className={className} style={wrapperStyle}>
                 <div style={headerStyle}>{formatCityName(this.props.city)}</div>
                 <hr style={dividerStyle} />
-
-                    <div style={temperatureStyle}>{this.getTemperature()}</div>
-
+                <div style={temperatureStyle}>{this.getTemperature()}</div>
                 {this.getFooter()}
             </div>
         );

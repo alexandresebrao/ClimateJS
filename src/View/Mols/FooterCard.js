@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Updated from "../Atoms/Updated";
 import Loading from "../Atoms/Loading";
+import ContentLabel from "../Atoms/ContentLabel";
 
 const footerStyle = {
     backgroundColor: "rgba(241,241,241, 0.5)",
@@ -9,6 +10,12 @@ const footerStyle = {
     padding: 8,
     textAlign: "center",
     color: "#B4B4B4"
+};
+
+const extraComponentStyle = {
+    display: "flex",
+    justifyContent: "space-around",
+    padding: 5
 };
 
 class FooterCard extends Component {
@@ -20,9 +27,29 @@ class FooterCard extends Component {
         return (<Updated time={this.props.time} />);
     }
 
+    getExtra() {
+        if (this.props.extra) {
+            return (
+                <div style={extraComponentStyle}>
+                    <ContentLabel
+                        value={parseInt(this.props.humidity, 10)}
+                        metric={"%"}
+                        label={"Humdity"}/>
+                    <ContentLabel
+                        value={parseInt(this.props.pressure, 10)}
+                        metric={"hPa"}
+                        label={"Pressure"}/>
+                </div>
+            );
+        }
+
+        return null;
+    }
+
     render() {
         return (
             <div style={footerStyle}>
+                {this.getExtra()}
                 {this.getView()}
             </div>
         );
@@ -30,8 +57,11 @@ class FooterCard extends Component {
 };
 
 FooterCard.propTypes = {
-  time: PropTypes.number,
-  loading: PropTypes.bool
+    time: PropTypes.number,
+    loading: PropTypes.bool,
+    extra: PropTypes.bool,
+    humidity: PropTypes.number,
+    pressure: PropTypes.number
 };
 
 export default FooterCard;

@@ -12,12 +12,13 @@ var bodyStyle = {
 
 class Main extends Component {
     getCards() {
-        const cards = [], cities = appConfig.cities;
+        const cards = [], cities = appConfig.cities, extraCities = appConfig.showExtra;
 
-        let i;
+        let i, city;
 
         for (i = 0; i < cities.length; i++) {
-            cards.push(<Card key={i} city={cities[i]}/>);
+            city = cities[i];
+            cards.push(<Card key={i} city={city} extra={extraCities.indexOf(city) > -1}/>);
         }
 
         return cards;
