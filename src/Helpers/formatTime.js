@@ -1,7 +1,7 @@
 const getHour = function(hour) {
     const hourResponse = {hour: hour};
-    if (hour > 12) {
-        hourResponse.hour = hour - 12;
+    if (hour >= 12) {
+        hourResponse.hour =  hour === 12 ? 12 : hour - 12;
         hourResponse.suffix = "PM";
     } else {
         hourResponse.suffix = "AM";

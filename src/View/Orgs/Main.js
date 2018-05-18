@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Card from "./Card";
+import Card from "../Mols/Card";
 import "./Main.css"
+import appConfig from "../../config";
 
 var bodyStyle = {
     backgroundColor: "#F1F1F1",
@@ -10,17 +11,13 @@ var bodyStyle = {
 };
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {cities: ["Nuuk,gl", "Urubici,br", "Nairobi,ke"]};
-        this.getCards = this.getCards.bind(this);
-    }
-
     getCards() {
-        var i, cities = this.state.cities, cards = [];
+        const cards = [], cities = appConfig.cities;
+
+        let i;
 
         for (i = 0; i < cities.length; i++) {
-            cards.push(<Card key={i} city={cities[i]}/>)
+            cards.push(<Card key={i} city={cities[i]}/>);
         }
 
         return cards;

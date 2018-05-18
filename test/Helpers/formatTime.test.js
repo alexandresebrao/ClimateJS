@@ -12,6 +12,10 @@ describe("formatTime tests", function() {
 
     it("should return 00:00:00 AM for 00:00:00 in timestamp", function() {
         expect(formatTime(1549159200000)).to.equal("00:00:00 AM");
-    })
+    });
+
+    it("should return 12:31:12 PM for 12:31:12", function() {
+        expect(formatTime(1526657472324)).to.equal("12:31:12 PM");
+    });
 
 });

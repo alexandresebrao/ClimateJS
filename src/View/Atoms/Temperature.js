@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
 class Temperature extends Component {
-    getColor() {
-        const temperature = this.props.children;
-
+    getColor(temperature) {
         if (temperature <= 5) {
             return "#63A3FF";
         }
@@ -16,10 +14,10 @@ class Temperature extends Component {
     }
 
     render() {
-        const style = {color: this.getColor()}, temperature = this.props.children;
+        const temperature = parseInt(this.props.children, 10), style = {color: this.getColor(temperature)};
 
         return (
-            <div style={style}>{parseInt(temperature, 10)}º</div>
+            <div style={style}>{temperature + "º"}</div>
         );
     }
 }
