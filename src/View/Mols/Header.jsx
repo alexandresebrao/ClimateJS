@@ -2,15 +2,18 @@ import React from "react";
 import logo from "./logo.svg";
 
 const headerStyle = {
-    textAlign: "center",
     height: 50,
     position: "fixed",
     width: "100%",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    zIndex: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
 };
 
 const imgStyle = {
-    height: "95%" //100% breaks IE
+    height: "50%"
 };
 
 const header = function() {

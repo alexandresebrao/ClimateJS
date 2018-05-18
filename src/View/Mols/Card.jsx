@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FooterCard from "../Atoms/FooterCard";
+import FooterCard from "./FooterCard";
 import WeatherController from "../../Connector/WeatherController";
 import PropTypes from "prop-types";
 import Temperature from "../Atoms/Temperature";
@@ -17,7 +17,11 @@ const wrapperStyle = {
 
 const headerStyle = {
     textAlign: "center",
-    width: "100%"
+    width: "100%",
+    color: "#737C84",
+    verticalAlign: "middle",
+    padding: 8,
+    fontSize: 18
 };
 
 const temperatureStyle = {
@@ -28,7 +32,8 @@ const temperatureStyle = {
 };
 
 const dividerStyle = {
-  color: "#EBEBEB"
+    color: "#EBEBEB",
+    margin:0
 };
 
 class Card extends Component {
@@ -54,6 +59,16 @@ class Card extends Component {
         return (<Temperature>{this.state.main.temp}</Temperature>)
     }
 
+    getFooter() {
+        const lastUpdated = this.state.main ? this.state.main.lastUpdate : null;
+
+        if (this.state.loading) {
+            return (<Loading />)
+        }
+
+        return (<FooterCard time={lastUpdated} loading={this.state.loading} />);
+    }
+
     render() {
         const className = this.props.city.replace(",", "");
 
@@ -62,7 +77,7 @@ class Card extends Component {
                 <div style={headerStyle}>{formatCityName(this.props.city)}</div>
                 <hr style={dividerStyle} />
                 <div style={temperatureStyle}>{this.getTemperature()}</div>
-                <FooterCard time={this.state.main ? this.state.main.lastUpdate : null} />
+                {this.getFooter()}
             </div>
         );
     }
