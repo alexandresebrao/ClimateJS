@@ -48,7 +48,9 @@ class Card extends Component {
     }
 
     componentDidMount() {
-        new WeatherController(this.props.city, this.updateData);
+        let weatherData = new WeatherController(this.props.city, this.updateData);
+
+        weatherData.getData();
     }
 
     updateData(value) {

@@ -12,7 +12,7 @@ import ContentLabel from "../../../src/View/Mols/ContentLabel";
 //     humidity: PropTypes.number,
 //     pressure: PropTypes.number
 
-describe("ContentLabel tests", function() {
+describe("FooterCard tests", function() {
     let wrapper;
 
     before(function() {

@@ -7,8 +7,6 @@ export default class WeatherController {
         this.city = city;
         this.setDataFromAPI = this.setDataFromAPI.bind(this);
         this.getData = this.getData.bind(this);
-
-        this.getData(city);
     }
 
     setDataFromAPI(response) {
@@ -23,8 +21,8 @@ export default class WeatherController {
         this.callback(this.data);
     }
 
-    getData(city) {
-        var localData = localStorage.getItem(city), dateNow = new Date().getTime(),
+    getData() {
+        var localData = localStorage.getItem(this.city), dateNow = new Date().getTime(),
             localDataJS = localData ? JSON.parse(localData) : undefined;
 
 
@@ -32,9 +30,10 @@ export default class WeatherController {
             this.data = localDataJS;
             this.handleUpdate();
         } else {
-            OpenWeatherMap.getInfoFromCity(city).then(this.setDataFromAPI)
+            OpenWeatherMap.getInfoFromCity(this.city)
+                .then(this.setDataFromAPI)
         }
 
-        setTimeout(this.getData.bind(this, city), 15 * 1000);
+        setTimeout(this.getData, 15 * 1000);
     }
 }
