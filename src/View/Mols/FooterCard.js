@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Updated from "../Atoms/Updated";
 import Loading from "../Atoms/Loading";
-import ContentLabel from "../Atoms/ContentLabel";
+import ContentLabel from "./ContentLabel";
 
 const footerStyle = {
     backgroundColor: "rgba(241,241,241, 0.5)",
