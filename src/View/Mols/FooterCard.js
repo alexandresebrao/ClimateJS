@@ -9,7 +9,7 @@ const footerStyle = {
     width: "100%",
     padding: 8,
     textAlign: "center",
-    color: "#B4B4B4"
+    color: "#B4B4B4",
 };
 
 const extraComponentStyle = {
@@ -19,14 +19,6 @@ const extraComponentStyle = {
 };
 
 class FooterCard extends Component {
-    getView() {
-        if (this.props.loading) {
-            return (<Loading />);
-        }
-
-        return (<Updated time={this.props.time} />);
-    }
-
     getExtra() {
         if (this.props.extra) {
             return (
@@ -46,10 +38,23 @@ class FooterCard extends Component {
         return null;
     }
 
+    getView() {
+        if (this.props.loading) {
+            return (<Loading />);
+        }
+
+        return (
+            <div>
+                {this.getExtra()}
+                <Updated time={this.props.time} />
+            </div>
+        );
+    }
+
+
     render() {
         return (
             <div style={footerStyle}>
-                {this.getExtra()}
                 {this.getView()}
             </div>
         );

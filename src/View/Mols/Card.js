@@ -67,19 +67,15 @@ class Card extends Component {
     }
 
     getFooter() {
-        const lastUpdated = this.state.main ? this.state.main.lastUpdate : null;
-
-        if (this.state.loading) {
-            return (<Loading />)
-        }
+        const lastUpdated = this.state.main ? this.state.main.lastUpdate : null, weatherInfo = this.state.main;
 
         return (
             <FooterCard
                 time={lastUpdated}
                 loading={this.state.loading}
                 extra={this.props.extra}
-                pressure={this.state.main.pressure}
-                humidity={this.state.main.humidity}
+                pressure={weatherInfo ? weatherInfo.pressure : null}
+                humidity={weatherInfo ? weatherInfo.humidity : null}
             />
         );
     }
