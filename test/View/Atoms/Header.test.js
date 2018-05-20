@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../../src/View/Mols/Header";
+import Header from "../../../src/View/Atoms/Header";
 import { shallow } from "enzyme";
 import { expect } from "chai";
 

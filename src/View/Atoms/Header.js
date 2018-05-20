@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import logo from "../Mols/logo.svg";
 
 const headerStyle = {
     height: 50,

@@ -5,8 +5,9 @@ import appConfig from "../../config";
 
 var bodyStyle = {
     backgroundColor: "#F1F1F1",
-    height: 700,
-    paddingTop: 50, // compensa a barra fixa no topo
+    minHeight: 600,
+    height: "100%",
+    paddingTop: 75, // compensa a barra fixa no topo
     display: "flex"
 };
 

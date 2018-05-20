@@ -50,8 +50,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "nyc --reporter=html --reporter=text mocha --require ./testSetup.js --compilers babel-core/register ./test/**/*test.js",
-    "test:watch": "mocha --require ./testSetup.js --compilers babel-core/register ./test/**/*test.js -w",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --require ./testSetup.js --compilers babel-core/register ./test/**/*test.js",
+    "test:watch": "cross-env NODE_ENV=test mocha --require ./testSetup.js --compilers babel-core/register ./test/**/*test.js -w",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -64,6 +64,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.6",
     "chai": "^4.1.2",
     "cross-env": "^5.1.5",
     "enzyme": "^3.3.0",
@@ -72,5 +73,9 @@
     "nyc": "^11.8.0",
     "react-addons-test-utils": "^15.6.2",
     "sinon": "^5.0.7"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
   }
 }

@@ -22,18 +22,22 @@ export default class WeatherController {
     }
 
     getData() {
-        var localData = localStorage.getItem(this.city), dateNow = new Date().getTime(),
+        let refreshTime = 600000;
+
+        const localData = localStorage.getItem(this.city), dateNow = new Date().getTime(),
             localDataJS = localData ? JSON.parse(localData) : undefined;
 
-
-        if (localDataJS && isCachedTime(localDataJS.lastUpdate, dateNow) ) {
+        if (localData && isCachedTime(localDataJS.lastUpdate, dateNow) ) {
             this.data = localDataJS;
+            refreshTime += localDataJS.lastUpdate;
+            refreshTime -= dateNow;
             this.handleUpdate();
+
         } else {
             OpenWeatherMap.getInfoFromCity(this.city)
-                .then(this.setDataFromAPI)
+                .then(this.setDataFromAPI);
         }
 
-        setTimeout(this.getData, 10 * 60 * 1000);
+        setTimeout(this.getData, refreshTime);
     }
 }

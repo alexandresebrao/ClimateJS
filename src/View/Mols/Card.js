@@ -88,7 +88,7 @@ class Card extends Component {
         const className = this.props.city.replace(",", "");
 
         return (
-            <div className={className} style={wrapperStyle}>
+            <div className={"Card " + className} style={wrapperStyle}>
                 <div style={headerStyle}>{formatCityName(this.props.city)}</div>
                 <hr style={dividerStyle} />
                 <div style={temperatureStyle}>{this.getTemperature()}</div>
@@ -99,7 +99,8 @@ class Card extends Component {
 };
 
 Card.propTypes = {
-    city: PropTypes.string.isRequired
+    city: PropTypes.string.isRequired,
+    extra: PropTypes.bool
 };
 
 export default Card;

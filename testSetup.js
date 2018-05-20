@@ -9,10 +9,6 @@ Enzyme.configure({ adapter: new Adapter() });
 global.document = jsdom.jsdom('<html><body></body></html>');
 global.window = document.defaultView;
 global.navigator = window.navigator;
-global.localStorage = {
-    getItem: function() {},
-    setItem: function() {},
-};
 
 function noop() {
     return {};
