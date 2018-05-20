@@ -8,12 +8,13 @@ import Loading from "../Atoms/Loading";
 import "./Card.css";
 
 const wrapperStyle = {
-    boxShadow: "0 0 10px rgba(51, 51, 51, 0.1)",
+    boxShadow: "3px 3px rgba(51, 51, 51, 0.1)",
     width: 250,
     minWidth: 150,
     backgroundColor: "white",
     position: "relative",
-    maxHeight: "100%"
+    maxHeight: "100%",
+    borderRadius: 3
 };
 
 const headerStyle = {

@@ -34,6 +34,6 @@ export default class WeatherController {
                 .then(this.setDataFromAPI)
         }
 
-        setTimeout(this.getData, 15 * 1000);
+        setTimeout(this.getData, 10 * 60 * 1000);
     }
 }
