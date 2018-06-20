@@ -1,5 +1,7 @@
 ClimateJS is just a sample app with unit test for JS made with React for a Job Oportunity
 
+![TravisCI](https://travis-ci.org/alexandresebrao/ClimateJS.svg?branch=master)
+
 ![WeatherNow](https://raw.githubusercontent.com/alexandresebrao/ClimateJS/master/Example.PNG)
 
 ### Setup
