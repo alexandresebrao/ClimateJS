@@ -3,7 +3,7 @@ import Card from "../Mols/Card";
 import "./Main.css"
 import appConfig from "../../config";
 
-var bodyStyle = {
+const bodyStyle = {
     backgroundColor: "#F1F1F1",
     minHeight: 600,
     height: "100%",
@@ -13,14 +13,11 @@ var bodyStyle = {
 
 class Main extends Component {
     getCards() {
-        const cards = [], cities = appConfig.cities, extraCities = appConfig.showExtra;
+        const cities = appConfig.cities, extraCities = appConfig.showExtra;
 
-        let i, city;
+        let cards;
 
-        for (i = 0; i < cities.length; i++) {
-            city = cities[i];
-            cards.push(<Card key={i} city={city} extra={extraCities.indexOf(city) > -1}/>);
-        }
+        cards = cities.map((city, index) => (<Card key={index} city={city} extra={extraCities.indexOf(city) > -1}/>));
 
         return cards;
     }
