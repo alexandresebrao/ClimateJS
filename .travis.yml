@@ -1,4 +1,8 @@
 language: node_js
 node_js:
-  - "iojs"
   - "10"
+
+
+env:
+  matrix:
+  - TZ=America/Sao_Paulo
