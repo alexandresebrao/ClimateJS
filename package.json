@@ -71,7 +71,6 @@
     "gh-pages": "^1.1.0",
     "mocha": "^5.1.1",
     "nyc": "^11.8.0",
-    "react-addons-test-utils": "^15.6.2",
     "sinon": "^5.0.7"
   },
   "nyc": {
